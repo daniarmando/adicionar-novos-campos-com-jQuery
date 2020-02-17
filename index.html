@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Adicionar mais campos com jQuery</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+  <link href="vendor/fontawesome-free-5.12.1-web/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div class="card">
+    <div class="card-header">
+      <b>Tabela da Escala de Férias</b> <span style="position: relative; top: -5px; left: -3px; opacity: .6" data-toggle="tooltip" data-placement="top" title="Preencha estes campos para gerar a tabela da escala de férias, clique no botão com sinal de adição para adicionar uma nova linha e no botão com sinal de subtração para remover."><i class="fas fa-info-circle text-secondary"></i></span>
+    </div>
+    <div class="card-body">        
+      <div id="boxCamposTabelaEscalaDeFerias">
+          <div class="campos-tabela-escala-de-ferias" style="opacity: 0;">            
+              <b class="titulo-linha">Linha 1</b> 
+              <button type="button" class="botao botao-adicionar" name="botao-adicionar_linha_1" onclick="adicionar()" title="adicionar nova linha abaixo"><i class="fas fa-plus"></i></button>
+              <button type="button" class="botao botao-remover" name="botao-remover_linha_1" onclick="remover(this)" title="remover linha 1" disabled><i class="fas fa-minus"></i></button>                  
+              <hr/>
+              <span><b>Nome:</b></span>                
+              <input type="text" name="nome_linha_1" maxlength="40" class="form-control">                       
+              <br />
+              <div class="row">
+                  <div class="col-md-3">
+                    <span><b>RG:</b></span>
+                    <input type="text" name="RG_linha_1" maxlength="14" class="form-control" placeholder="00.000.000-0">                             
+                  </div>
+                  <div class="col-md-2">
+                    <span><b>N&ordm; dias:</b></span>
+                    <input type="text" name="nroDias_linha_1" onkeypress="javascript: var tecla=(window.event)?event.keyCode:e.which;if((tecla>47 &amp;&amp; tecla<58)) return true; else{ if (tecla==8 || tecla==0) return true; else return false; }" maxlength="3" class="form-control" placeholder="00">                      
+                  </div>
+                  <div class="col-md-7 col-12">
+                      <span><b>Per&iacute;odos:</b></span>  
+                      <div style="display:flex;">
+                        <input type="text" name="periodo1_linha_1" maxlength="10" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off">                          
+                        <span style="margin:9px 5px 5px 5px;"> a </span>
+                        <input type="text" name="periodo2_linha_1" maxlength="10" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off">                          
+                        <span style="margin-left:30px"></span>
+                        <input type="text" name="periodo3_linha_1" maxlength="10" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off">                          
+                        <span style="margin:9px 5px 5px 5px;"> a </span>
+                        <input type="text" name="periodo4_linha_1" maxlength="10" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off">                          
+                      </div>      
+                  </div>                
+              </div>                                      
+              <br />
+              <span>Observação:</span>
+              <input type="text" name="observacao_linha_1" maxlength="80" class="form-control">                      
+              <hr />                
+          </div>
+      </div>
+      <input type="hidden" id="quantidadeDeLinhas" name="quantidadeDeLinhas">        
+    </div>
+  </div>
+
+<script defer src="vendor/fontawesome-free-5.12.1-web/js/all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+<script src="js/tooltip.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
